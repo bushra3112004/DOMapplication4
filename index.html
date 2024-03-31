@@ -14,8 +14,7 @@
         margin: 20px auto;
         height: 700px;
         width: 1030px;
-        background-color: pink;
-        flex-direction: row;
+    
 
     }
     .product-card{
@@ -77,8 +76,18 @@ display: block;
     }
     .btn-buy-now:hover{
         box-shadow:1px 1px 2px 2px rgb(38, 37, 39);
+    }
+  @media screen and (max-width:600px){
+    
+    .container{
+        width:90%;
+        flex-direction: column;
+        height: 200px;
 
     }
+  }
+    
+  
 
 </style>
 <body>
@@ -109,7 +118,7 @@ Buy Now
     <div class="product-card">
         <img src="./images/headphones4 (2).png" class="headphone-img" />
         <div class="card-body">
-            <h1 class="product-title">Bluetooth Headphone</h1>
+            <h1 class="product-title">Wireless Headphone</h1>
             <p class="product-description">
                 this Headphones are a pair of padded speakers
                 which you wear over your ears in order to listen to a radio or recorded music.
