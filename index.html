@@ -7,15 +7,15 @@
 </head>
 <style>
     body{
-        background-color: rgb(251, 254, 253);
+        background-color: rgba(53, 53, 220, 0.507);
     }
     .product-card{
         background-color: #fff;
         width: 300px;
         border-radius: 20px;
-        height: 500px;
+        height: 600px;
         box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        display: block;
+        display: flex;
         margin: 30px auto;
         padding: 3px;
         
@@ -42,15 +42,31 @@
  font-weight: bold;
  font-size: 30px;
     }
+    .quantity-btn-container{
+        display: flex;
+        justify-content: center;
+
+    }
+    .btn-quantity{
+        height: 30px;
+    }
+    .quantity-text{
+        font-size: 25px;
+        margin: auto 10px;
+    }
     .btn-buy-now{
 background-color: yellow;
 color:black;
 border: none;
+font-size: 25px;
 padding: 5px 30px;
 display: block;
  margin: 10px auto;
         border-radius: 20px;
-        
+    }
+    .btn-buy-now:hover{
+        box-shadow:1px 1px 2px 2px rgb(38, 37, 39);
+
     }
 
 </style>
@@ -58,17 +74,83 @@ display: block;
     <div class="product-card">
         <img src="./headphone.png" class="headphone-img"/>
         <div class="card-body">
-            <h1 class="product-title">bluetooth headphone</h1>
+            <h1 class="product-title">Bluetooth Headphone</h1>
 <p class="product-description">
  this Headphones are a pair of padded speakers 
- which you wear over your ears in order to listen to a radio or recorded music,
-or for using a phone without other people hearing it.
+ which you wear over your ears in order to listen to a radio or recorded music.
 </p>
-<p class="product-price">₹ 500</p>
+<p class="product-price">Price:₹ 500</p>
+<h3 id="show-quantity">Item:1 × 500</h3>
+<h3 id="show-total">Total:500</h3>
+<div class="quantity-btn-container">
+    <img src="minus.png" class="btn-quantity" onclick="dec()"/>
+    <span class="quantity-text" id="quantity-text">1</span>
+    <img src="plus (2).png" class="btn-quantity" onclick="inc()"/>
+</div>
 <button type="button" class="btn-buy-now">
-buy now
+Buy Now
 </button>       
 </div>
     </div>
+
+    <div class="product-card">
+        <img src="./headphone.png" class="headphone-img" />
+        <div class="card-body">
+            <h1 class="product-title">Bluetooth Headphone</h1>
+            <p class="product-description">
+                this Headphones are a pair of padded speakers
+                which you wear over your ears in order to listen to a radio or recorded music.
+            </p>
+            <p class="product-price">Price:₹ 500</p>
+            <h3 id="show-quantity">Item:1 × 500</h3>
+            <h3 id="show-total">Total:500</h3>
+            <div class="quantity-btn-container">
+                <img src="minus.png" class="btn-quantity" onclick="dec()" />
+                <span class="quantity-text" id="quantity-text">1</span>
+                <img src="plus (2).png" class="btn-quantity" onclick="inc()" />
+            </div>
+            <button type="button" class="btn-buy-now">
+                Buy Now
+            </button>
+        </div>
+    </div>
+<script>
+
+    function inc(){
+        const quantityText=document.getElementById("quantity-text");
+         const showQuantity = document.getElementById("show-quantity");
+        const showTotal = document.getElementById("show-total");
+        let quantity=parseInt(quantityText.innerText);
+        if(quantity<10)
+        {
+        quantityText.innerText = ++quantity;
+        }
+        else
+        {
+            alert("you cann't add more than 10 items ")
+        }
+   showQuantity.innerText=`Item: ${quantity}×349`;
+        
+   showTotal.innerText=`Total: ${quantity*349}`;
+
+    }
+    function dec(){
+
+         const quantityText = document.getElementById("quantity-text");
+         const showQuantity= document.getElementById("show-quantity");
+         const showTotal=document.getElementById("show-total");
+        let quantity = parseInt(quantityText.innerText);
+  if(quantity>1)
+  {
+        quantityText.innerText = --quantity;
+    }
+    else{
+        alert("you cann't add less than 1 items")
+    }
+     showQuantity.innerText = `Item: ${quantity}×349`;
+        showTotal.innerText = `Total: ${quantity * 349}`;
+
+    }
+</script>
 </body>
 </html>
