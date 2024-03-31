@@ -12,9 +12,10 @@
     .container{
         display: flex;
         margin: 20px auto;
-        height: 800px;
-        width: 800px;
+        height: 700px;
+        width: 1030px;
         background-color: pink;
+        flex-direction: row;
 
     }
     .product-card{
@@ -24,8 +25,8 @@
         height: 600px;
         box-shadow: 0 0 10px rgba(0,0,0,0.2);
         display: block;
-        margin: 30px auto;
-        padding: 3px;
+        margin: 30px auto; 
+        padding: 5px ;
         
     }
     .headphone-img{
@@ -124,6 +125,30 @@ Buy Now
             </button>
         </div>
     </div>
+
+<div class="product-card">
+    <img src="./headphone.png" class="headphone-img" />
+    <div class="card-body">
+        <h1 class="product-title">Bluetooth Headphone</h1>
+        <p class="product-description">
+            this Headphones are a pair of padded speakers
+            which you wear over your ears in order to listen to a radio or recorded music.
+        </p>
+        <p class="product-price">Price:₹ 500</p>
+        <h3 id="show-quantity">Item:1 × 500</h3>
+        <h3 id="show-total">Total:500</h3>
+        <div class="quantity-btn-container">
+            <img src="minus.png" class="btn-quantity" onclick="dec()" />
+            <span class="quantity-text" id="quantity-text">1</span>
+            <img src="plus (2).png" class="btn-quantity" onclick="inc()" />
+        </div>
+        <button type="button" class="btn-buy-now">
+            Buy Now
+        </button>
+    </div>
+</div>
+
+
     </div>
 <script>
 
